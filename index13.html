@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 13. Metoda .reduce()</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <button type="button" class="button">Wyświetl w konsoli</button>
+
+    <script>
+
+        document.querySelector('.button').addEventListener('click', () => {
+            const piosenki = [
+                [
+                    { id: 1, title: 'Następna stacja', artist: 'Taco Hemingway' },
+                    { id: 2, title: 'Candy', artist: 'Quebonafide & Klaudia Szafrańska' },
+                    { id: 3, title: 'Nowy kolor', artist: 'Otsochodzi & Taco Hemingway' },
+                    { id: 4, title: 'Tamagotchi (Remix)', artist: 'Taconafide & Dawid Podsiadło' }
+                ],
+                [
+                    { id: 99, title: 'Ayo', artist: 'Chris Brown & Tyga' }
+                ]
+            ]
+
+            console.log(piosenki.reduce((reduce, e, i, ar)=> reduce.concat(e), []))
+            
+
+			/*
+			- Dana jest tablica, której elementami są 2 inne tablice.
+			
+			- W każdej z tych 2 tablic, elementami są obiekty z 3 składowymi (id, title oraz artist), które reprezentują poszczególne piosenki.
+			
+			- Mamy przycisk, po kliknięciu którego, w konsoli - za pomocą metody .reduce() - ma zostać zwrócona 1 połączona tablica z piosenkami, powstała z tych 2 tablic wchodzących w skład głównej tablicy.
+			
+			- W celu połączenia tablic w jedną, skorzystaj z metody .concat().
+			
+			- W przypadku naszej tablicy tablic z obiektami, mamy otrzymać: Array(5) [ {…}, {…}, {…}, {…}, {…} ].
+			*/
+        });
+
+    </script>
+
+</body>
+
+</html>
