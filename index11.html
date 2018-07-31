@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 11. Metoda .reduce()</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <button type="button" class="button">Wyświetl</button>
+
+    <p class="info">Średnia arytmetyczna elementów tablicy:
+        <span class="info__output">???</span>
+    </p>
+
+    <script>
+        const tablica = [1, 3, 4, 5, 10]
+        const button = document.querySelector('button')
+        const infoOutput = document.querySelector('.info__output')
+
+        button.addEventListener('click', () => {
+            const srednia = tablica.reduce((reduced, el, i, arr) => 
+                i+1 === arr.length? (reduced + el)/arr.length : (reduced + el)
+                , 0)
+
+
+
+            return infoOutput.innerHTML = srednia 
+        })
+
+
+		/*
+		- Dana jest tablica z liczbami [1, 3, 4, 5, 10].
+		
+		- W dokumencie znajduje się przycisk, po kliknięciu którego, poniżej w akapicie ma zostać wyświetlona średnia arytmetyczna liczb znajdujących się w tablicy.
+		
+		- Za pomocą metody .reduce(), zsumuj wszystkie elementy tablicy, a następnie wyciągnij z tej sumy średnią arytmetyczną.
+		
+		- Średnia arytmetyczna, w przypadku naszej tablicy, ma wynosić 4.6.
+		*/
+
+    </script>
+
+</body>
+
+</html>
