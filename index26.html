@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 26. Obiekt Promise</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <script>
+
+        const resolveFirstWelcomePromiseFunction = (resolve) => setTimeout(() => resolve('Hello, world!'), 1000)
+
+        const resolveSecondWelcomePromiseFunction = (resolve) => setTimeout(() => resolve('Hello, user!'), 3000)
+
+        const resolveGoodbyePromiseFunction = (resolve) => setTimeout(() => resolve('Bye, everybody!'), 5000)
+
+        const firstWelcomePromise = new Promise(resolveFirstWelcomePromiseFunction)
+
+        const secondWelcomePromise = new Promise (resolveSecondWelcomePromiseFunction)
+
+        const goodbyePromise = new Promise (resolveGoodbyePromiseFunction)
+
+        firstWelcomePromise
+            .then(data => console.log(data))
+
+        secondWelcomePromise
+            .then(data => console.log(data))
+
+        goodbyePromise
+            .then(data => console.log(data))
+
+
+		/*
+		- Korzystając z obiektu Promise, stwórz 3 różne obietnice - pierwszego powitania, drugiego powitania oraz pożegnania.
+		
+		- W przypadku powodzenia każdej z tych obietnic (metoda .then()), w konsoli mają zostać wyświetlone odpowiednio - obiecany napis: 'Hello, world!', po 3 sekundach obiecany napis: 'Hello, user!', a po 5 sekundach obiecany napis: 'Bye, everybody!'.
+		
+		- W przypadku błędu (metoda .catch()), w konsoli mają zostać wyświetlone komunikaty w postaci: 'Błąd:\n' + error (z opóźnieniem takim, jak w przypadku powodzenia).
+		*/
+    </script>
+
+</body>
+
+</html>
