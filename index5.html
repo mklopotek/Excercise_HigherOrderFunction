@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 5. Metoda .map()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+		
+		const liczby = [5, 6, 13, 0, 1, 18, 23];
+        
+        const fun = (arr, parm) => {
+            const tab = arr.map((e, i, arr) => e * parm)
+            return console.log(tab)
+        }
+        
+        fun(liczby, 2)
+
+		
+		/*
+		Dana jest tablica z liczbami [5, 6, 13, 0, 1, 18, 23].
+		
+		Na podstawie tej tablicy, stwórz nową tablicę, której elementami będą wymnożone przez wybrany mnożnik poszczególne elementy oryginalnej tablicy.
+		
+		Mnożnik przekaż jako 4-ty parametr metody .map(), np. mnoznik = 2.
+		
+		Przykładowo, przekazując do metody .map() mnożnik o wartości 2, mamy otrzymać następującą tablicę: Array(7) [ 10, 12, 26, 0, 2, 36, 46 ].
+		
+		Wynik metody .map() wyprowadź na ekran za pomocą metody console.log().
+		*/
+		
+	</script>
+
+</body>
+</html>
