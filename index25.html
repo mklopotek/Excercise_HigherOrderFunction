@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 25. Obiekt Promise</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <script>
+
+        const resolvePromiseFunction = resolve => resolve('Hello, world!')
+
+        const promise = new Promise(resolvePromiseFunction)
+
+
+        promise
+            .then(data => 
+                {console.log('Hello, user!')
+                return console.log(data)})
+            .then(data => {
+                return setTimeout(() => console.log('Bye,everybody!'), 3000)})
+            .catch(error => alert('Błąd:\n' + error))
+
+
+
+		/*
+		- Korzystając z obiektu Promise, stwórz obietnicę powitania.
+		
+		- W przypadku powodzenia (metoda .then()), w konsoli ma zostać wyświetlony napis: 'Hello, user!', wówczas w konsoli ma zostać wyświetlony obiecany napis: 'Hello, world!', wówczas, ale już po 3 sekundach, w konsoli ma zostać wyświetlony napis: 'Bye, everybody!'.
+		
+		- W przypadku błędu (metoda .catch()), w konsoli ma zostać wyświetlony komunikat w postaci: 'Błąd:\n' + error.
+		*/
+    </script>
+
+</body>
+
+</html>
