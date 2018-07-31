@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 24. Obiekt Promise</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <script>
+
+        const resolvePromiseFunction = (resolve) => setTimeout(() => resolve('Hello, world!'), 3000)
+
+        const promise = new Promise(resolvePromiseFunction)
+
+
+        promise
+            .then(data => console.log(data))
+            .catch(error => alert('Błąd:\n' + error))
+
+
+
+		/*
+		- Korzystając z obiektu Promise, stwórz obietnicę powitania po upływie 3 sekund.
+		
+		- W przypadku powodzenia (metoda .then()), w konsoli ma zostać wyświetlony obiecany napis: 'Hello, world!'.
+		
+		- W przypadku błędu (metoda .catch()), w konsoli ma zostać wyświetlony komunikat w postaci: 'Błąd:\n' + error.
+		*/
+    </script>
+
+</body>
+
+</html>
