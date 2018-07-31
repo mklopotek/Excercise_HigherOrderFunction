@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 22. Fetch API &mdash; wyświetlenie obrazków</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <script>
+
+        fetch('https://jsonplaceholder.typicode.com/photos')
+            .then(response => response.json())
+            .then(data => {
+                const text = data
+                        .filter((e, i) => i < 10)
+                        .map(e => '<a href=' + e.url + '><img src=' + e.thumbnailUrl + '></a>')
+                        .reduce((reduce, e) => reduce + e )
+                document.body.innerHTML = text}
+            )
+            .catch(error => alert('Błąd:\n' + error))
+
+		/*
+		- Korzystając z metody .fetch(), pobierz w formacie JSON kolekcję zdjęć (tablicę obiektów ze zdjęciami).
+		
+		- https://jsonplaceholder.typicode.com/photos
+		
+		- W przypadku błędu, w konsoli ma zostać wyświetlony komunikat w postaci: 'Błąd:\n' + error.
+		
+		- W przypadku powodzenia, w elemencie body ma zostać wyświetlona - oczywiście już wcześniej "zjsonowana" - odpowiedź serwera pod postacią pierwszych 10 miniaturek, wraz z linkami do większych zdjęć.
+		
+		- Skorzystaj z metod .map(), .filter() oraz .reduce().
+		*/
+    </script>
+
+</body>
+
+</html>
