@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 14. Metody .map(), .filter(), .reduce()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<button type="button" class="button">Wyświetl w alercie</button>
+
+	<script>
+		
+		document.querySelector('.button').addEventListener('click', () => {
+			const piosenkiPolskie = [
+				{ id: 1, title: 'Następna stacja', artist: 'Taco Hemingway', duration: 250 },
+				{ id: 2, title: 'Candy', artist: 'Quebonafide & Klaudia Szafrańska', duration: 195 },
+				{ id: 3, title: 'Nowy kolor', artist: 'Otsochodzi & Taco Hemingway', duration: 188 },
+				{ id: 4, title: 'Tamagotchi (Remix)', artist: 'Taconafide & Dawid Podsiadło', duration: 202 }
+			];
+			const piosenkiZagraniczne = [
+				{ id: 99, title: 'Ayo', artist: 'Chris Brown & Tyga', duration: 225 }
+            ];
+            
+
+            const result = piosenkiPolskie.concat(piosenkiZagraniczne)
+                .map(e => { newDuration = Math.round(e.duration/60)
+                e.duration = newDuration
+                return e})
+                .filter(e => e.duration > 3)
+                .map(e => e.title)
+                .join(',')
+
+            console.log(result)
+
+			/*
+			- W dokumencie znajduje się przycisk, po kliknięciu którego, w alercie mają zostać wyświetlone tytuły piosenek dłuższych niż 3 minuty.
+			
+			- Dane są 2 tablice, których elementami są obiekty z piosenkami.
+			
+			- Utwórz nową tablicę składającą się z tych 2 tablic.
+			
+			- Co ważne, poszczególne metody wywołuj kaskadowo (łańcuchowo).
+			
+			- Korzystając z metod .reduce() oraz .concat(), złącz te 2 tablice zawarte w nowej tablicy.
+			- Korzystając z metody .map(), stwórz nową tablicę z obiektami, zamieniając liczbę sekund na zaokrągloną liczbę minut.
+			
+			- Korzystając z metody .filter(), zwróć tylko te piosenki, które są dłuższe niż 3 minuty.
+			
+			- Korzystając z metody .map(), stwórz nową tablicę, umieszczając w niej tylko tytuły piosenek.
+			
+			- Korzystając z metody .join(), złącz elementy tablicy w 1 ciąg znaków z przekazanym przecinkiem jako separatorem.
+			
+			- W przypadku naszych tablic z obiektami reprezentującymi poszczególne piosenki, mamy otrzymać: 'Następna stacja, Ayo'.
+			*/
+		});
+		
+	</script>
+
+</body>
+</html>
