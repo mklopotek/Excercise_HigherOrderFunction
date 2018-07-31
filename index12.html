@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 12. Metoda .reduce()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<button type="button" class="button">Wyświetl</button>
+
+	<p class="info">Suma ludności, ale nie uwzględniając Kanady: <span class="info__output">???</span></p>
+
+	<script>
+		
+			const kraje = [
+				{ country: 'Francja', population: 67247000, year: 2018 },
+				{ country: 'Kanada', population: 37174600, year: 2018 },
+				{ country: 'Niemcy', population: 82740900, year: 2017 },
+				{ country: 'Polska', population: 38422346, year: 2017 },
+				{ country: 'Wielka Brytania', population: 66040229, year: 2017 }
+            ]
+            
+
+        const button = document.querySelector('button')
+        const akapit = document.querySelector('.info__output')
+
+            button.addEventListener('click', () => {
+                const result = 
+                kraje.filter(el => el.country !== 'Kanada')
+                    .reduce((reduce, e, i, ar) => { return reduce + e.population }, 0 );
+            
+            akapit.innerHTML = result 
+            }
+            )
+
+
+			/*
+			- Dana jest tablica obiektów z krajami.
+			
+			- Każdy element tablicy jest obiektem z 3 składowymi - country, population oraz year.
+			
+			- W dokumencie znajduje się przycisk, po kliknięciu którego, poniżej w akapicie - za pomocą metody .reduce() - ma zostać zwrócona suma ludności wszystkich krajów zawartych w tablicy, ale bez Kanady.
+			
+			- Pisząc warunek w ciele strzałkowej funkcji wyższego rzędu, skorzystaj z 3-częściowego operatora warunkowego (ang. ternary operator).
+			
+			- Oczekiwany wynik, w przypadku naszej tablicy obiektów, to 254450475.
+			*/
+		
+	</script>
+
+</body>
+</html>
