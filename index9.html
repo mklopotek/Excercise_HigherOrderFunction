@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 9. Metoda .filter()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+		
+		const liczby = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        
+        const newLiczby = liczby.filter(e => e % 3 === 0 ).sort((a,b) => a<b)
+
+        console.log(newLiczby)
+
+		/*
+		- Dana jest tablica z liczbami od 0 do 15.
+		
+		- Na podstawie tej tablicy, stwórz nową tablicę, której elementami będą tylko te elementy oryginalnej tablicy, które są podzielne przez 3.
+		
+		- Następnie, korzystając z metody .reverse(), nową tablicę posortuj od wartości największej do najmniejszej.
+		
+		- Nowa tablica ma wyglądać następująco: Array(6) [ 15, 12, 9, 6, 3, 0 ].
+		
+		- Wynik metody .filter() wyprowadź na ekran za pomocą metody console.log().
+		*/
+		
+	</script>
+
+</body>
+</html>
