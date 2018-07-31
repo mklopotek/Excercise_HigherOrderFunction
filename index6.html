@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 6. Metoda .map()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+		
+		const smartfony = [
+			{ name: 'Apple iPhone X', price: 4699.00 },
+			{ name: 'Huawei P20 Lite', price: 1599.99 },
+			{ name: 'Samsung Galaxy S9', price: 3548.00 }
+		];
+        
+        const smartfony2 = smartfony.map((el, i) => i+1 + '.' + el.name + ' ' + '('+ el.price+')')
+
+        const show = smartfony2.forEach(el => console.log(el))
+        
+        console.log(show)
+		
+		/*
+		- Dana jest tablica obiektów ze smartfonami.
+		
+		- Każdy element tablicy jest obiektem z 2 składowymi - name i price.
+		
+		- Na podstawie tej tablicy, stwórz nową tablicę, której elementami będą połączone informacje (w postaci ciągu znaków) z obu składowych poszczególnych obiektów.
+		
+		- Przykładowo, dla pierwszego smartfona, mamy otrzymać pierwszy element nowej tablicy w postaci: '1. Apple iPhone X (4699 zł)'.
+		
+		- Wynik metody .map() wyprowadź na ekran za pomocą metody console.log().
+		*/
+		
+	</script>
+
+</body>
+</html>
