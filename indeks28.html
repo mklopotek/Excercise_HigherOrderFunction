@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 28. Obiekt Promise</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+	
+	<script>
+		const prezent = () => new Promise(
+            (resolve, reject) => { 
+                resolve('Oto prezent!')
+                reject('Prezentu nie ma') 
+        })
+
+		prezent()
+			.then(result => console.log(result), 
+            error => console.log(error));
+
+
+		/*
+		- Korzystając z obiektu Promise, stwórz obietnicę otrzymania prezentu.
+		
+		- W przypadku powodzenia (metoda .then()), w konsoli ma zostać wyświetlony obiecany napis: 'Oto prezent!'.
+		
+		- W przypadku błędu (ta sama metoda .then()), w konsoli ma zostać wyświetlony obiecany napis: 'Prezentu nie ma'.
+		*/
+	</script>
+
+</body>
+</html>
