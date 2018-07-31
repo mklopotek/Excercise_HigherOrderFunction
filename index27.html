@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie 27. Obiekt Promise</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+
+<body>
+
+    <script>
+        const firstWelcomePromise = () => new Promise ((resolve, rejected) => resolve('Hello, world!'))
+
+        const secondWelcomePromise = () => new Promise ((resolve, rejected) => resolve('Hello, user!'))
+
+        const goodbyePromise = () => new Promise ((resolve, rejected) => resolve('Bye, everybody!'))
+
+        Promise.all([firstWelcomePromise(), secondWelcomePromise(), goodbyePromise()])
+            .then(result => {
+                const [result1, result2, result3] = result;
+                console.log(result1)
+                setTimeout(()=>console.log(result2), 3000)
+                setTimeout(() => console.log(result3), 5000)
+            })
+            .catch(error => {
+                console.log(error)
+                const [error1, error2, error3] = error
+                console.log('Błąd:\n' + error1)
+                setTimeout( () => console.log('Błąd:\n' + error2), 3000)
+                setTimeout( () => console.log('Błąd:\n' + error3), 5000)
+            })
+
+
+		/*
+		- Korzystając z obiektu Promise, stwórz 3 różne obietnice - pierwszego powitania, drugiego powitania oraz pożegnania.
+		
+		- Za pomocą metody Promise.all(), w przypadku powodzenia każdej z tych obietnic (metoda .then()), w konsoli mają zostać wyświetlone odpowiednio - obiecany napis: 'Hello, world!', po 3 sekundach obiecany napis: 'Hello, user!', a po 5 sekundach obiecany napis: 'Bye, everybody!'.
+		
+		- Za pomocą tej samej metody Promise.all(), w przypadku błędu (metoda .catch()), w konsoli mają zostać wyświetlone komunikaty w postaci: 'Błąd:\n' + error (z opóźnieniem takim, jak w przypadku powodzenia).
+		*/
+    </script>
+
+</body>
+
+</html>

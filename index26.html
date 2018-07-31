@@ -26,12 +26,15 @@
 
         firstWelcomePromise
             .then(data => console.log(data))
+            .catch(error => alert('Błąd:\n' + error))
 
         secondWelcomePromise
             .then(data => console.log(data))
+            .catch(error => alert('Błąd:\n' + error))
 
         goodbyePromise
             .then(data => console.log(data))
+            .catch(error => alert('Błąd:\n' + error))
 
 
 		/*
